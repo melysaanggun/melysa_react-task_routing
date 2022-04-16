@@ -1,6 +1,7 @@
 .todolist-list {
     align-items: center;
     text-align: center;
+    display: block;
 }
 
 .todolist-list button {

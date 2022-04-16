@@ -1,0 +1,13 @@
+.row {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row h1 {
+    text-align: center;
+    display: block;
+}

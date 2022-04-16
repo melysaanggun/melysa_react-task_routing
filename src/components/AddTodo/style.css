@@ -1,5 +1,6 @@
 .form-input {
     text-align: center;
+    display: inline-block;
 }
 .form-input input {
     border-radius: 40px;
