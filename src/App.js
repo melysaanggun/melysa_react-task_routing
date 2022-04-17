@@ -12,8 +12,9 @@ import NotFound from './pages/NotFound';
     return (
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/aboutApp' element={<AboutApp />} />
-        <Route path='/aboutAuthor' element={<AboutAuthor />} />
+        <Route path='/about' element={<Home />} />
+        <Route path='/about/aboutApp' element={<AboutApp />} />
+        <Route path='/about/aboutAuthor' element={<AboutAuthor />} />
         <Route path='#' element={<NotFound />} />
       </Routes>
     )

@@ -22,7 +22,7 @@ const List = (props) => {
         <div className="todolist-list">
             {props.list.map((todo) => {
                 return <ul key={todo.id} style={{textDecoration: todo.completed ? 'line-through'  : 'none', 
-                fontStyle: todo.completed ? 'italic' : 'normal' }}>
+                fontStyle: todo.completed ? 'italic' : 'normal', display: 'block' }}>
                     
                     <input 
                     type="checkbox" 

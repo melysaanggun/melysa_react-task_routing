@@ -45,12 +45,14 @@ const Home = (props) => {
         <div className="container">
         <div className="row">
           <Navbar />
-          <h1>todos</h1>
-          <AddTodo simpan={simpan}/>
-          <List 
-          list={todo} 
-          onChecked={selesai}
-          hapus={hapus} />
+          <div className="content">
+            <h1>todos</h1>
+            <AddTodo simpan={simpan}/>
+            <List 
+            list={todo} 
+            onChecked={selesai}
+            hapus={hapus} />
+          </div>
         </div>
       </div>
      );

@@ -6,32 +6,54 @@ import { useState } from "react";
 
 /*Icon, Styling*/
 import styles from "./style.module.css";
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
+import * as FaIcons from "react-icons/fa";
+import * as MdIcons from "react-icons/md";
 
 const Navbar = () => {
-    const [sidebar, setSidebar] = useState(false)
+  const [sidebar, setSidebar] = useState(false);
 
-    const showSidebar = () => setSidebar(!sidebar)
+  const [dropdown, setDropdown] = useState(false);
 
-    return ( 
-        <div className={styles.navbar} >
-            <Link to="#" className={styles.menubar}>
-                <FaIcons.FaBars onClick={showSidebar} className={styles.bar}/>
+  const showSidebar = () => setSidebar(!sidebar);
+
+  const showDropdown = () => setDropdown(!dropdown);
+
+  return (
+    <div className={styles.navbar}>
+      <Link to="#" className={styles.menubar}>
+        <FaIcons.FaBars onClick={showSidebar} className={styles.bar} />
+      </Link>
+      <nav className={sidebar ? styles.nav_menu_active : styles.nav_menu}>
+        <ul>
+          <li>
+            <Link to="/" classname={styles.link}>
+              Home
             </Link>
-            <nav className={sidebar ? styles.nav_menu_active : styles.nav_menu}>
-                <ul >
-                    <li>
-                        <Link to="#">
-                            <AiIcons.AiOutlineClose />
-                        </Link>
-                    </li>
-                    <li><Link to="/" classname={styles.link}>Home</Link></li>
-                    <li><Link to="/aboutApp" classname={styles.link}>About</Link></li>
-                </ul>  
-            </nav>       
-        </div>
-     );
-}
- 
+          </li>
+          <div className={styles.dropdown}>
+            <li>
+              <Link to="/" className={styles.menubar} onClick={showDropdown}>
+                About
+                <MdIcons.MdArrowDropDownCircle />
+              </Link>
+            </li>
+            <div className={dropdown ? styles.dropdown_container_active : styles.dropdown_container}>
+              <li>
+                <Link to="/about/aboutApp" classname={styles.link} >
+                  About App
+                </Link>
+              </li>
+              <li>
+                <Link to="/about/aboutAuthor" classname={styles.link}>
+                  About Author
+                </Link>
+              </li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  );
+};
+
 export default Navbar;
